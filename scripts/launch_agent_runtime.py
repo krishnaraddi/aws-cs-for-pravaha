@@ -19,6 +19,8 @@ def query_agent(kb_id, query, region="us-east-1"):
         )
         return response.get("retrievalResults", [])
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print(f"❌ Error querying agent: {e}")
         return []
 
